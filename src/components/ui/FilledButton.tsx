@@ -5,7 +5,7 @@ const FilledButton = React.forwardRef<HTMLButtonElement, React.ComponentProps<"b
   ({ className, ...props }, ref) => {
     return (
       <button className={cn(
-          "relative flex items-center justify-center h-[50px] w-[50px] rounded-[50px] bg-white/[.7] hover:bg-white transition-all cursor-pointer",
+          "relative flex items-center justify-center h-[50px] w-[50px] rounded-[50px] bg-white/[.35] border-2 border-white/[.35] hover:bg-white hover:border-white transition-all cursor-pointer shadow",
           className
         )}
         ref={ref}
