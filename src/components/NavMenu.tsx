@@ -19,32 +19,34 @@ const NavMenu = () => {
     ]
 
     return (
-        <div className='fixed top-[15px] left-0 right-0 w-full max-w-[1600px] mx-auto'>
-            <div className='flex items-center justify-between w-full h-[70px] bg-white/[.3] rounded-[70px] px-[15px]'>
-                <Link href="/dashboard" className='w-auto h-[35px] ms-[10px]'>
-                    <Image className='w-auto h-[36px]' src='/img/logo.svg' width={180} height={45} alt='logo' priority/>
-                </Link>
-                <div className='flex items-center justify-center space-x-1'>
-                    {links.map((link) => (
-                        <Link key={link.href} href={link.href} 
-                        className={`flex items-center justify-center h-[38px] w-auto px-[25px] rounded-[46px] text-md font-semibold transition-colors 
-                            ${pathname === link.href
-                                ? 'bg-[#0C0D11] text-white hover:bg-[#0C0D11]/[.85]'
-                                : 'bg-transparent text-[#0C0D11] hover:bg-[#0C0D11]/[0.1]'} `}>
-                            {link.label}
-                        </Link>
-                    ))}
-                </div>
-                <div className='flex items-center justify-center space-x-1 w-auto'>
-                    <FilledButton>
-                        <Image src='./img/icons/message.svg' width={20} height={20} alt='icons'/>
-                        <span className='absolute right-[10px] top-[10px] w-[14px] h-[14px] rounded-[12px] border-3 border-white bg-[#FC352A] shadow-md'></span>
-                    </FilledButton>
-                    <FilledButton>
-                        <Image src='./img/icons/notification.svg' width={20} height={20} alt='icons'/>
-                        <span className='absolute right-[10px] top-[10px] w-[14px] h-[14px] rounded-[12px] border-3 border-white bg-[#FC352A] shadow-md'></span>
-                    </FilledButton>
-                    <DropButton></DropButton>
+        <div className='fixed top-0 left-0 right-0 pt-[15px] w-full bg-linear-90 from-[#FCDFA0] to-[#ABC2FD] z-10'>
+            <div className='w-full max-w-[1600px] mx-auto'>
+                <div className='flex items-center justify-between w-full h-[70px] bg-white/[.3] rounded-[70px] px-[15px] shadow-md'>
+                    <Link href="/dashboard" className='w-auto h-[35px] ms-[10px]'>
+                        <Image className='w-auto h-[36px]' src='/img/logo.svg' width={180} height={45} alt='logo' priority/>
+                    </Link>
+                    <div className='flex items-center justify-center space-x-1'>
+                        {links.map((link) => (
+                            <Link key={link.href} href={link.href} 
+                            className={`flex items-center justify-center h-[38px] w-auto px-[25px] rounded-[46px] text-md font-semibold transition-colors 
+                                ${pathname === link.href
+                                    ? 'bg-[#0C0D11] text-white hover:bg-[#0C0D11]/[.85]'
+                                    : 'bg-transparent text-[#0C0D11] hover:bg-[#0C0D11]/[0.1]'} `}>
+                                {link.label}
+                            </Link>
+                        ))}
+                    </div>
+                    <div className='flex items-center justify-center space-x-1 w-auto'>
+                        <FilledButton>
+                            <Image src='./img/icons/message.svg' width={20} height={20} alt='icons'/>
+                            <span className='absolute right-[10px] top-[10px] w-[12px] h-[12px] rounded-[12px] border-3 border-white bg-[#FC352A] shadow-md'></span>
+                        </FilledButton>
+                        <FilledButton>
+                            <Image src='./img/icons/notification.svg' width={20} height={20} alt='icons'/>
+                            <span className='absolute right-[10px] top-[10px] w-[12px] h-[12px] rounded-[12px] border-3 border-white bg-[#FC352A] shadow-md'></span>
+                        </FilledButton>
+                        <DropButton></DropButton>
+                    </div>
                 </div>
             </div>
         </div>

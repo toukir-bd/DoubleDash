@@ -13,19 +13,25 @@ const infoCards = [
     icon: "/img/icons/info-1.svg",
     amount: "$5200.450",
     growth: "+30%",
+    perGrowth: "per week",
+    growthColor: "#12B034",
     description: "Income from 70 Tasks on this Month",
   },
   {
     icon: "/img/icons/info-2.svg",
-    amount: "$5200.450",
-    growth: "+30%",
-    description: "Income from 70 Tasks on this Month",
+    amount: "+52",
+    growth: "+10",
+    perGrowth: "today",
+    growthColor: "#0051FF",
+    description: "New Customer assigned this Week",
   },
   {
     icon: "/img/icons/info-3.svg",
-    amount: "$5200.450",
-    growth: "+30%",
-    description: "Income from 70 Tasks on this Month",
+    amount: "+26",
+    growth: "+3",
+    perGrowth: "today",
+    growthColor: "#DF8200",
+    description: "New Tasks added to this Week",
   },
 ];
 
@@ -64,11 +70,12 @@ const Account = () => {
                     <Image src={card.icon} width={20} height={20} alt="icon" />
                   </RoundedInfo>
                   <div className="flex flex-col">
-                    <h1 className="text-[20px] text-[#0C0D11] font-semibold flex items-center space-x-1">
+                    <h1 className="text-[20px] text-[#0C0D11] font-bold flex items-center space-x-1">
                       {card.amount}
-                      <span className="ms-2 h-[24px] w-auto rounded-[30px] bg-[#12B034] text-[12px] text-white flex items-center px-3">
+                      <span className="ms-2 h-[24px] w-auto rounded-[30px] text-[13px] text-white flex items-center px-3"
+                      style={{ backgroundColor: card.growthColor }}>
                         {card.growth}
-                        <span className="text-white/[.7] ps-1">per week</span>
+                        <span className="text-white/[.7] text-[12px] font-semibold ps-1">{card.perGrowth}</span>
                       </span>
                     </h1>
                     <p>{card.description}</p>
@@ -80,9 +87,42 @@ const Account = () => {
             {/* Profile Section */}
             <div className="w-full flex space-x-[10px]">
               {/* Left Profile Card */}
-              <div className="flex flex-col flex-1/3">
+              <div className="flex flex-col flex-1/3 space-y-[10px]">
                 <CardBox className="relative flex flex-col items-center justify-center">
-                  <Image src="/img/users/user.svg" width={170} height={170} alt="user" />
+                  {/* <Image src="/img/users/user.svg" width={170} height={170} alt="user" /> */}
+                  <h1 className="text-2xl font-bold text-[#0C0D11]">Toukir Rahman</h1>
+                  <p className="mb-2 text-sm text-[#0C0D11]/[.75] font-semibold">
+                    Front-End Developer | UX-UI Designer
+                  </p>
+                  <span className="w-auto h-[28px] bg-[#0051FF]/[.15] text-[#0051FF] text-sm font-semibold flex items-center justify-center px-4 rounded-[28px]">
+                    Premium Membership
+                  </span>
+
+                  {/* Filled Buttons */}
+                  <div className="mt-3 flex items-center justify-center space-x-1">
+                    {filledButtonIcons.map((icon, index) => (
+                      <FilledButton key={index}>
+                        <Image width={20} height={20} src={icon} alt="icon" />
+                      </FilledButton>
+                    ))}
+                  </div>
+
+                  {/* Top Right Rounded Buttons */}
+                  <div className="absolute w-full px-[25px] top-[25px] left-0 right-0 flex items-center justify-between">
+                    <RoundedButton>
+                      <Image width={20} height={20} src={roundedButtonIcons[0]} alt="icon" />
+                    </RoundedButton>
+                    <div className="flex items-center space-x-1">
+                      {roundedButtonIcons.slice(1).map((icon, index) => (
+                        <RoundedButton key={index}>
+                          <Image width={20} height={20} src={icon} alt="icon" />
+                        </RoundedButton>
+                      ))}
+                    </div>
+                  </div>
+                </CardBox>
+                <CardBox className="relative flex flex-col items-center justify-center">
+                  {/* <Image src="/img/users/user.svg" width={170} height={170} alt="user" /> */}
                   <h1 className="text-2xl font-bold text-[#0C0D11]">Toukir Rahman</h1>
                   <p className="mb-2 text-sm text-[#0C0D11]/[.75] font-semibold">
                     Front-End Developer | UX-UI Designer
