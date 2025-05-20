@@ -19,7 +19,7 @@ const NavMenu = () => {
     ]
 
     return (
-        <div className='fixed top-0 left-0 right-0 pt-[15px] w-full bg-linear-90 from-[#FCDFA0] to-[#ABC2FD] z-10'>
+        <div className='fixed top-0 left-0 right-0 pt-[15px] w-full bg-linear-90 from-[#FCDFA0] to-[#ABC2FD] z-10 px-5'>
             <div className='w-full max-w-[1600px] mx-auto'>
                 <div className='flex items-center justify-between w-full h-[70px] bg-white/[.3] rounded-[70px] px-[15px] shadow-md'>
                     <Link href="/dashboard" className='w-auto h-[35px] ms-[10px]'>
@@ -28,10 +28,10 @@ const NavMenu = () => {
                     <div className='flex items-center justify-center space-x-1'>
                         {links.map((link) => (
                             <Link key={link.href} href={link.href} 
-                            className={`flex items-center justify-center h-[38px] w-auto px-[25px] rounded-[46px] text-md font-semibold transition-colors 
+                            className={`flex items-center justify-center h-[38px] w-auto px-[25px] rounded-[46px] text-[16px] font-semibold transition-all 
                                 ${pathname === link.href
                                     ? 'bg-[#0C0D11] text-white hover:bg-[#0C0D11]/[.85]'
-                                    : 'bg-transparent text-[#0C0D11] hover:bg-[#0C0D11]/[0.1]'} `}>
+                                    : 'bg-transparent text-[#0C0D11]/[.75] hover:bg-[#fff]/[0.45]'} `}>
                                 {link.label}
                             </Link>
                         ))}

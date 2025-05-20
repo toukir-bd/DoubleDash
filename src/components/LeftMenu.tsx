@@ -15,7 +15,7 @@ const LeftMenu = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-2 w-auto h-auto bg-[#0C0D11]/[.07] rounded-[70px] p-[10px]">
+    <div className="fixed top-0 bottom-0 left-0 my-auto flex flex-col items-center justify-center space-y-2 w-auto h-auto bg-[#0C0D11]/[.07] rounded-[70px] p-[10px]">
       {links.map((link) => (
         <Link key={link.href} href={link.href}
           className={`flex items-center justify-center h-[50px] w-[50px] rounded-full transition-colors
